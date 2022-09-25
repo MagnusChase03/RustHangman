@@ -3,6 +3,7 @@ extern crate rand;
 use rand::thread_rng;
 use rand::Rng;
 
+// Returns a random word from a vector of possible game words
 fn get_random_word() -> String {
     let mut rng = thread_rng();
 
@@ -16,6 +17,7 @@ fn get_random_word() -> String {
     word
 }
 
+// Checks if the user has found every letter in the word
 fn is_unsolved(word_vec: &Vec<char>) -> bool {
     for c in word_vec {
         if *c == '_' {
@@ -26,6 +28,8 @@ fn is_unsolved(word_vec: &Vec<char>) -> bool {
     false
 }
 
+// Uses the users guess to match characters in the word 
+// and returns true if they found one
 fn attempt(word: &String, word_vec: &mut Vec<char>, guess: &String) -> bool {
     let mut found = false;
 
@@ -56,6 +60,7 @@ fn game() {
         println!("Lives: {}", lives);
         println!("Guess a letter:");
 
+        // Read guess
         let _bytes_read = std::io::stdin().read_line(&mut guess).unwrap();
 
         if !attempt(&word, &mut word_vec, &guess) {
