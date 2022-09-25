@@ -3,15 +3,28 @@ extern crate rand;
 use rand::thread_rng;
 use rand::Rng;
 
+// Reads words from words.txt
+fn read_words() -> Vec<String> {
+
+    let mut words: Vec<String> = Vec::new();
+
+    let word_list = std::fs::read_to_string("words.txt").expect("Invalid word path.");
+    for word in (&word_list).split("\n") {
+
+        // Remove extra new line character at the end
+        words.push(word[0..word.len() - 1].to_string());
+
+    }
+
+    words
+
+}
+
 // Returns a random word from a vector of possible game words
 fn get_random_word() -> String {
     let mut rng = thread_rng();
 
-    let mut words = vec![
-        "coding".to_string(),
-        "rust".to_string(),
-        "ownership".to_string(),
-    ];
+    let mut words = read_words();
     let word = words.remove(rng.gen_range(0..words.len()));
 
     word
