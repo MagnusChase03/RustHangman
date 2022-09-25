@@ -11,9 +11,9 @@
     A simple cli game written in rust.
     <br />
     ·
-    <a href="https://github.com/MagnusChase03/RustLinkedList/issues">Report Bug</a>
+    <a href="https://github.com/MagnusChase03/RustHangman/issues">Report Bug</a>
     ·
-    <a href="https://github.com/MagnusChase03/RustLinkedList/issues">Request Feature</a>
+    <a href="https://github.com/MagnusChase03/RustHangman/issues">Request Feature</a>
   </p>
 </div>
 
