@@ -127,5 +127,17 @@ async function guessKey(event) {
 
 }
 
+async function reset() {
+
+    getWord();
+    lives = 6;
+    livesElement.textContent = "Lives: " + lives;
+
+    haveGuessed = []
+    displayGuessedLetters();
+
+}
+
 window.guess = guess;
 window.guessKey = guessKey;
+window.reset = reset;

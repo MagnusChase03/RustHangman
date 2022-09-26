@@ -19,7 +19,7 @@ fn get_word() -> String {
         "lifetime".to_string(),
         "crate".to_string(),
         "cargo".to_string(),
-        "memory".to_string()
+        "memory".to_string(),
     ];
     let word: String = words.remove(rng.gen_range(0..words.len()));
 

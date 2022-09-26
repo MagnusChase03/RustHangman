@@ -11,19 +11,37 @@
 
 <body>
 
-    <div class="container py-4">
+    <div class="container-fluid py-4 bg-dark vh-100">
 
-        <div class="p-5 mb-4 bg-dark rounded-3">
+        <div class="container-fluid py-5 position-relative top-50 translate-middle-y">
 
-            <div class="container-fluid py-5">
+            <p id="word" class="text-light text-center fs-4"></p>
 
-                <p id="word" class="text-light text-center fs-4"></p>
-                
-                <input class="p-2 bg-dark border border-2 rounded text-light position-relative start-50 translate-middle-x fs-5" id="guess" placeholder="Guess a letter..." onkeypress="guessKey(event)" />
-                <br><br>
-                
-                <p id="lives" class="text-light fs-6"></p>
-                <p id="haveGuessed" class="text-light fs-6"></p>
+            <div class="d-flex justify-content-center">
+
+                <div class="mx-2 p-2">
+
+                    <input class="p-2 bg-dark border border-2 rounded text-light fs-5" id="guess"
+                        placeholder="Guess a letter..." onkeypress="guessKey(event)" />
+                    <button class="btn btn-danger" onclick="reset()">Reset</button>
+
+                </div>
+
+            </div>
+            <br><br>
+
+            <div class="d-flex justify-content-center">
+
+                <div class="mx-2 p-2">
+
+                    <p id="lives" class="text-light fs-6 text-center"></p>
+
+                </div>
+                <div class="mx-2 p-2">
+
+                    <p id="haveGuessed" class="text-light fs-6 text-center"></p>
+
+                </div>
 
             </div>
 
