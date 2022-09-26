@@ -90,11 +90,11 @@ async function guess() {
     let isSolved = await invoke("is_solved", { wordDisplay: wordDisplay });
     if (lives > 0 && !isSolved) {
 
-        let canGuess = await invoke("can_guess", { word: word, userGuess: guessElement.value });
+        let canGuess = await invoke("can_guess", { word: word, userGuess: guessElement.value.toLowerCase() });
 
         if (canGuess) {
 
-            wordDisplay = await invoke("guess", { word: word, wordDisplay: wordDisplay, userGuess: guessElement.value });
+            wordDisplay = await invoke("guess", { word: word, wordDisplay: wordDisplay, userGuess: guessElement.value.toLowerCase() });
             wordElement.textContent = wordDisplay;
 
         } else {
@@ -105,9 +105,9 @@ async function guess() {
         }
 
 
-        if (!hasGuessed(guessElement.value)) {
+        if (!hasGuessed(guessElement.value.toLowerCase())) {
 
-            haveGuessed.push(guessElement.value);
+            haveGuessed.push(guessElement.value.toLowerCase());
             displayGuessedLetters();
 
         }
