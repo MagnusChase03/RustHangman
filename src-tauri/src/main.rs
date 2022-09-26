@@ -19,6 +19,39 @@ fn get_word() -> String {
 }
 
 #[tauri::command]
+fn is_solved(word_display: &str) -> bool {
+    
+    let word_display_no_whitespace: Vec<&str> = word_display.split_whitespace().collect();
+    for c in word_display_no_whitespace {
+
+        if c.chars().nth(0).unwrap() == '_' {
+
+            return false;
+
+        }
+
+    }
+
+    true
+}
+
+#[tauri::command]
+fn can_guess(word: &str, user_guess: &str) -> bool {
+    
+    let macthing: char = user_guess.chars().nth(0).unwrap();
+    for c in word.chars() {
+
+        if c == macthing {
+
+            return true;
+
+        }
+    }
+
+    false
+}
+
+#[tauri::command]
 fn guess(word: &str, word_display: &str, user_guess: &str) -> String {
     
     let mut new_string: String = String::new();
@@ -70,7 +103,7 @@ fn guess(word: &str, word_display: &str, user_guess: &str) -> String {
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![get_word, guess])
+        .invoke_handler(tauri::generate_handler![get_word, is_solved, can_guess, guess])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

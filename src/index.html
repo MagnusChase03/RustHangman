@@ -12,7 +12,8 @@
 <body>
 
     <p id="word"></p>
-    <input id="guess" placeholder="Guess a letter..." />
+    <p id="lives"></p>
+    <input id="guess" placeholder="Guess a letter..." onkeypress="guessKey(event)" />
     <button type="button" onclick="guess()">Guess</button>
 
 </body>
