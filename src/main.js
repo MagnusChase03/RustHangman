@@ -4,20 +4,63 @@ let word;
 let wordDisplay;
 
 let lives;
+let haveGuessed;
 
 let wordElement;
 let livesElement;
 let guessElement;
+let haveGuessedElement;
 
 window.addEventListener("DOMContentLoaded", () => {
     wordElement = document.querySelector("#word");
     livesElement = document.querySelector("#lives");
     guessElement = document.querySelector("#guess");
+    haveGuessedElement = document.querySelector("#haveGuessed");
 
     getWord();
     lives = 6;
     livesElement.textContent = "Lives: " + lives;
+
+    haveGuessed = []
+    displayGuessedLetters();
 });
+
+function hasGuessed(c) {
+
+    for (let i = 0; i < haveGuessed.length; i++) {
+
+        if (haveGuessed[i] == c) {
+
+            return true;
+
+        }
+
+    }
+
+    return false;
+
+}
+
+function displayGuessedLetters() {
+
+    let display = "";
+    for (let i = 0; i < haveGuessed.length; i++) {
+
+        if (i < haveGuessed.length - 1) {
+
+            display += haveGuessed[i] + ", ";
+
+        } else {
+
+            display += haveGuessed[i];
+
+        }
+
+    }
+
+    haveGuessedElement.textContent = "Letters guessed: " + display;
+
+}
 
 async function getWord() {
 
@@ -61,6 +104,13 @@ async function guess() {
 
         }
 
+
+        if (!hasGuessed(guessElement.value)) {
+
+            haveGuessed.push(guessElement.value);
+            displayGuessedLetters();
+
+        }
         guessElement.value = "";
 
     }

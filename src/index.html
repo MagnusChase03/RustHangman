@@ -11,10 +11,25 @@
 
 <body>
 
-    <p id="word"></p>
-    <p id="lives"></p>
-    <input id="guess" placeholder="Guess a letter..." onkeypress="guessKey(event)" />
-    <button type="button" onclick="guess()">Guess</button>
+    <div class="container py-4">
+
+        <div class="p-5 mb-4 bg-dark rounded-3">
+
+            <div class="container-fluid py-5">
+
+                <p id="word" class="text-light text-center fs-4"></p>
+                
+                <input class="p-2 bg-dark border border-2 rounded text-light position-relative start-50 translate-middle-x fs-5" id="guess" placeholder="Guess a letter..." onkeypress="guessKey(event)" />
+                <br><br>
+                
+                <p id="lives" class="text-light fs-6"></p>
+                <p id="haveGuessed" class="text-light fs-6"></p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 

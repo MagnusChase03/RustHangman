@@ -1,8 +1,8 @@
 [package]
 name = "hangman_app"
 version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "Hangman game"
+authors = ["MagnusChase03"]
 license = ""
 repository = ""
 edition = "2021"
