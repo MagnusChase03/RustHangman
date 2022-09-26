@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-# Tauri + Vanilla
-
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Javascript.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-=======
 <a name="readme-top"></a>
 
 ![issues-shield]
@@ -98,4 +89,3 @@ Distributed under the GPL License. See `LICENSE.txt` for more information.
 [stars-shield]: https://img.shields.io/github/stars/MagnusChase03/RustHangman?style=for-the-badge
 [license-shield]: https://img.shields.io/github/license/magnuschase03/RustHangman?style=for-the-badge
 [rust-shield]: https://img.shields.io/badge/Rust-20232A?style=for-the-badge&logo=rust
->>>>>>> 28b35884f3968a019299b681efe4ac6450c98454
