@@ -6,6 +6,8 @@ let wordDisplay;
 let lives;
 let haveGuessed;
 
+let hangman;
+
 let wordElement;
 let livesElement;
 let guessElement;
@@ -16,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
     livesElement = document.querySelector("#lives");
     guessElement = document.querySelector("#guess");
     haveGuessedElement = document.querySelector("#haveGuessed");
+    hangman = document.querySelector("#hangman");
 
     getWord();
     lives = 6;
@@ -23,6 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     haveGuessed = []
     displayGuessedLetters();
+
+    hangman.src = "/assets/hangman0.png";
 });
 
 function hasGuessed(c) {
@@ -101,6 +106,7 @@ async function guess() {
 
             lives -= 1;
             livesElement.textContent = "Lives: " + lives;
+            hangman.src = "/assets/hangman" + Math.abs(lives - 6) + ".png";
 
         }
 
@@ -135,6 +141,8 @@ async function reset() {
 
     haveGuessed = []
     displayGuessedLetters();
+
+    hangman.src = "/assets/hangman0.png";
 
 }
 

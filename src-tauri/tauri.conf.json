@@ -56,10 +56,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 735,
         "resizable": true,
         "title": "Hangman",
-        "width": 800
+        "width": 1045
       }
     ]
   }

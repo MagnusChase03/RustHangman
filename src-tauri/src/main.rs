@@ -8,19 +8,49 @@ extern crate rand;
 use rand::thread_rng;
 use rand::Rng;
 
+use std::env;
+use std::path;
+use std::fs;
+use std::io::Write;
+
+fn read_words() -> Vec<String> {
+
+    let mut words: Vec<String> = Vec::new();
+    let word_path: String = env::current_dir().unwrap().display().to_string();
+
+    if !path::Path::new(format!("{}\\words.txt", word_path).as_str()).exists() {
+
+        let mut word_file: fs::File = fs::File::create(format!("{}\\words.txt", word_path).as_str()).unwrap();
+
+        let mut _result = writeln!(word_file, "coding");
+        _result = writeln!(word_file, "rust");
+        _result = writeln!(word_file, "cargo");
+        _result = writeln!(word_file, "crate");
+        _result = writeln!(word_file, "ownership");
+        _result = writeln!(word_file, "abstraction");
+        _result = writeln!(word_file, "lifetime");
+        _result = writeln!(word_file, "namespace");
+        
+    }
+    
+    let word_list = std::fs::read_to_string(format!("{}\\words.txt", word_path)).expect("Invalid word path.");
+    for word in (&word_list).split("\n") {
+        // Remove extra new line character at the end
+        if word != "" {
+
+            words.push(word[0..word.len() - 1].to_string());
+
+        }
+    }
+
+    words
+}
+
 #[tauri::command]
 fn get_word() -> String {
     let mut rng = thread_rng();
 
-    let mut words: Vec<String> = vec![
-        "rust".to_string(),
-        "coding".to_string(),
-        "ownership".to_string(),
-        "lifetime".to_string(),
-        "crate".to_string(),
-        "cargo".to_string(),
-        "memory".to_string(),
-    ];
+    let mut words: Vec<String> = read_words();
     let word: String = words.remove(rng.gen_range(0..words.len()));
 
     word
