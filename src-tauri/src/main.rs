@@ -38,7 +38,7 @@ fn read_words() -> Vec<String> {
         // Remove extra new line character at the end
         if word != "" {
 
-            words.push(word[0..word.len() - 1].to_string());
+            words.push(word.to_string());
 
         }
     }
