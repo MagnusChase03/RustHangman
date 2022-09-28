@@ -8,7 +8,7 @@
 <h3 align="center">Rust Hangman</h3>
 
   <p align="center">
-    A simple cli game written in rust.
+    A simple game written in rust.
     <br />
     ·
     <a href="https://github.com/MagnusChase03/RustHangman/issues">Report Bug</a>
