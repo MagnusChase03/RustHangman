@@ -8,7 +8,7 @@
 <h3 align="center">Rust Hangman</h3>
 
   <p align="center">
-    A simple cli game written in rust.
+    A simple game written in rust.
     <br />
     ·
     <a href="https://github.com/MagnusChase03/RustHangman/issues">Report Bug</a>
@@ -47,6 +47,7 @@ Because rust is becoming more and more popular, I decided to get at least the ba
 ### Built With
 
 * ![rust-shield]
+* ![tauri-shield]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -54,25 +55,42 @@ Because rust is becoming more and more popular, I decided to get at least the ba
 
 ### Prerequisites
 
-The only requirment is having rust downloaded
+To build this project yourself, you are going to need rust and tauri
+
+To install rust 
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+Then install tauri with
+
+```
+cargo install tauri
+```
+
 ### Installation
 
-1. First clone/pull/download the repo to your own machine
-2. In the target folder put a `words.txt` file containg any number of words seperated by new lines
+If you want to build the app yourself
+
+1) Clone the repo
+2) Run `cargo tauri build`
+3) Find the executable in `src-tauri/target/release/bundle`
+
+If you just want to run the app
+
+1) Go to <a href="https://github.com/MagnusChase03/RustHangman/releases">Releases</a>
+2) Download and run the msi
+3) Run the app executable
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
 
-Use `cargo` to run the application
+Use cargo to run the application
 
 ```
-cargo run
+cargo tauri dev
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -89,3 +107,4 @@ Distributed under the GPL License. See `LICENSE.txt` for more information.
 [stars-shield]: https://img.shields.io/github/stars/MagnusChase03/RustHangman?style=for-the-badge
 [license-shield]: https://img.shields.io/github/license/magnuschase03/RustHangman?style=for-the-badge
 [rust-shield]: https://img.shields.io/badge/Rust-20232A?style=for-the-badge&logo=rust
+[tauri-shield]: https://img.shields.io/badge/Tauri-20232A?style=for-the-badge&logo=tauri

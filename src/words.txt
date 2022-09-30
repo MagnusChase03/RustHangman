@@ -1,7 +1,0 @@
-rust
-optimization
-coding
-ownership
-lifetime
-vector
-refrence
